@@ -5,8 +5,10 @@
 // Replace all occurances of the string "the" with "a large".
 // Set the content of the sonnet div with the new string.
 
-var poem = document.getElementById('sonnet').innerHTML;
+var poem = document.getElementById('sonnet').innerText;
 // var sonnet = poem.innerHTML;
+// .innerText === counts just the text characters. 
+// .innerHTML === counts the characters in the HTML block -higher number count
 console.log(sonnet);
 
 var orphans = poem.indexOf("orphans");
@@ -18,7 +20,7 @@ var replaceWinter = poem.replace("winter", "yuletide");
 document.getElementById('sonnet').innerHTML = replaceWinter;
 // console.log(replaceWinter);
 
-var replaceThe = replaceWinter.replace(/ the /g, " a large ");
+var replaceThe = replaceWinter.replace(/ the /gi, " a large ");
 document.getElementById('sonnet').innerHTML = replaceThe; 
 
 
